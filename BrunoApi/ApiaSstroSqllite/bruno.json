@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "ApiaSstroSqllite",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
