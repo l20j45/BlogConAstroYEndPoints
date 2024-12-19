@@ -6,6 +6,22 @@ meta {
 
 post {
   url: http://localhost:4321/api/clients
-  body: none
+  body: json
   auth: none
+}
+
+body:json {
+  {
+    "id" : 1,
+    "name" : "Daniel Rojas",
+    "age" : 31,
+    "isActive" : false,
+  }
+}
+
+body:multipart-form {
+  id: 1
+  name: Daniel Rojas
+  age: 31
+  isActive: fallse
 }
