@@ -3,6 +3,19 @@ import { Clients, db, eq } from 'astro:db';
 
 export const prerender = false;
 
+
+export const GET: APIRoute = async ({params, request }) => {
+    const clientId = params.clientId ?? '';
+    const resp = await db.select().from(Clients).where(eq(Clients.id, +clientId));
+
+    return new Response(JSON.stringify({ method: `Get`, ...resp }), {
+        status: 200,
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
+};
+
 export const PUT: APIRoute = async ({ params, request }) => {
     try {
 
